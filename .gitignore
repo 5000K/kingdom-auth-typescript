@@ -15,3 +15,7 @@ node_modules
 
 #!.yarn/cache
 .pnp.*
+dist/core/index.d.ts
+dist/core/index.d.ts.map
+dist/core/index.js
+dist/core/index.js.map

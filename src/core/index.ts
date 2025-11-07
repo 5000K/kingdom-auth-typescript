@@ -43,6 +43,30 @@ export class KingdomAuthClient {
     }
   }
 
+  async logout(): Promise<void> {
+    const endpoint = `${this.baseUrl}/auth/logout`;
+
+    try {
+      const response = await this.fetchImpl(endpoint, {
+        method: "GET",
+        credentials: "include",
+      });
+
+      if (!response.ok) {
+        const errorData = (await response.json()) as Error;
+        throw new Error(
+          `Failed to logout: ${errorData?.error || response.statusText}`
+        );
+      }
+
+      this.currentToken = null;
+      this.email = null;
+      this.currentTokenExpiry = new Date(0);
+    } catch (error) {
+      throw error;
+    }
+  }
+
   async authenticate(provider: string): Promise<void> {
     if (!this.providers) {
       await this.loadProviders();
