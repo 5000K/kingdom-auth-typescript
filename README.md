@@ -2,7 +2,12 @@
 
 This repository contains the typescript client library for [kingdom-auth](https://github.com/5000K/kingdom-auth).
 
-While kingdom-auth is in open preview (pre-release), it is not distributed via npm.
+While kingdom-auth is in open preview (pre-release), it is not distributed via npm. For now, install it like this:
+
+```bash
+npm install https://github.com/5000K/kingdom-auth-typescript.git
+yarn add https://github.com/5000K/kingdom-auth-typescript.git
+```
 
 Please refer to the [main repo](https://github.com/5000K/kingdom-auth) for info on how to set-up kingdom auth.
 
